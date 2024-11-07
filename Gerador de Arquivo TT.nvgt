@@ -1,0 +1,55 @@
+file f;
+string filename, ttname, ttaddress, tcpport, udpport, username, password, nickname, channel, channelpass;
+int encrypted;
+void main() {
+ttname=input_box("Gerador de arquivo .TT", "Digite o nome do servidor.");
+if(ttname=="") {
+exit(); }
+if(get_last_error()==-12) {
+exit(); }
+ttaddress=input_box("Gerador de arquivo .TT", "Digite o endereço do servidor.");
+if(ttaddress=="") {
+exit(); }
+if(get_last_error()==-12) {
+exit(); }
+tcpport=input_box("Gerador de arquivo .TT", "Digite a porta TCP.", "10333");
+if(tcpport=="") {
+exit(); }
+if(get_last_error()==-12) {
+exit(); }
+udpport=input_box("Gerador de arquivo .TT", "Digite a porta UDP.", tcpport);
+if(udpport=="") {
+exit(); }
+if(get_last_error()==-12) {
+exit(); }
+encrypted=question("Gerador de arquivo .TT", "O servidor está criptografado?");
+username=input_box("Gerador de arquivo .TT", "Digite o nome de usuário.");
+if(get_last_error()==-12) {
+exit(); }
+password=input_box("Gerador de arquivo .TT", "Digite a senha do usuário.");
+if(get_last_error()==-12) {
+exit(); }
+nickname=input_box("Gerador de arquivo .TT", "Digite um apelido, opcional.");
+if(get_last_error()==-12) {
+exit(); }
+channel=input_box("Gerador de arquivo .TT", "digite o canal onde o usuário irá entrar, opcional.");
+if(get_last_error()==-12) {
+exit(); }
+if(channel!="") {
+channelpass=input_box("Gerador de arquivo .TT", "Digite a senha do canal.");
+if(get_last_error()==-12) {
+exit(); } }
+filename=save_file_dialog("TeamTalk Host Settings (*.tt):tt");
+if(filename.empty()) exit();
+f.open(filename+".tt", "w");
+f.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r<!DOCTYPE teamtalk>\r<teamtalk version=\"5.0\">\r <host>\r  <name>"+ttname+"</name>\r  <address>"+ttaddress+"</address>\r  <tcpport>"+tcpport+"</tcpport>\r  <udpport>"+udpport+"</udpport>\r");
+if(encrypted==1) {
+f.write("  <encrypted>true</encrypted>\r"); }
+else {
+f.write("  <encrypted>false</encrypted>\r"); }
+f.write("  <auth>\r   <username>"+username+"</username>\r   <password>"+password+"</password>\r   <nickname>"+nickname+"</nickname>\r  </auth>\r");
+if(channel!="") f.write("  <join>\r   <channel>"+channel+"</channel>\r   <password>"+channelpass+"</password>\r  </join>\r");
+f.write(" </host>\r</teamtalk>\r");
+f.close();
+alert("Êxito", "Arquivo gerado com sucesso.");
+exit(); }
