@@ -1,0 +1,23 @@
+﻿; TeamTalk File Generator - English version.
+; Run or compile this file. The program itself is in teamtalk_file_generator.ahk.
+T_Title := "TeamTalk File Generator"
+T_ServerName := "Server name:"
+T_ServerAddress := "Server address:"
+T_TcpPort := "TCP port:"
+T_UdpPort := "UDP port:"
+T_Encrypted := "Encrypted server"
+T_Username := "Username:"
+T_Password := "Password:"
+T_Nickname := "Nickname (optional):"
+T_Channel := "Channel (optional):"
+T_ChannelPassword := "Channel password:"
+T_Show := "Show"
+T_Hide := "Hide"
+T_Generate := "Generate file"
+T_Cancel := "Cancel"
+T_Error := "Error"
+T_FillRequired := "Please fill in all required fields!"
+T_Save := "Save"
+T_Success := "Success"
+T_Generated := "File generated successfully."
+#Include %A_ScriptDir%\teamtalk_file_generator.ahk

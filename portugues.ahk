@@ -1,0 +1,23 @@
+﻿; Gerador de Arquivo TT - versão em português.
+; Execute ou compile este arquivo. O programa em si está em teamtalk_file_generator.ahk.
+T_Title := "Gerador de arquivo .TT"
+T_ServerName := "Nome do servidor:"
+T_ServerAddress := "Endereço do servidor:"
+T_TcpPort := "Porta TCP:"
+T_UdpPort := "Porta UDP:"
+T_Encrypted := "Servidor criptografado"
+T_Username := "Nome de usuário:"
+T_Password := "Senha:"
+T_Nickname := "Apelido (opcional):"
+T_Channel := "Canal (opcional):"
+T_ChannelPassword := "Senha do canal:"
+T_Show := "Mostrar"
+T_Hide := "Ocultar"
+T_Generate := "Gerar arquivo"
+T_Cancel := "Cancelar"
+T_Error := "Erro"
+T_FillRequired := "Por favor, preencha todos os campos obrigatórios!"
+T_Save := "Salvar"
+T_Success := "Êxito"
+T_Generated := "Arquivo gerado com sucesso."
+#Include %A_ScriptDir%\teamtalk_file_generator.ahk
